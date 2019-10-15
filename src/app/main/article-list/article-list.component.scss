@@ -1,7 +1,6 @@
 main{
   background: #34495e;
   padding: 38px 0 70px 0;
-
   .tabs-filter{
     display: flex;
     justify-content: center;
@@ -14,6 +13,22 @@ main{
         content: '/';
         display: inline-block;
         text-indent: 7px;
+      }
+    }
+  }
+  .article-grid{
+    padding-top: 38px;
+    &-item{
+      text-align: center;
+      h3{
+        color: #ecf0f1;
+        font-size: 16px;
+        margin-top: 6px;
+        margin-bottom: 10px;
+      }
+      small{
+        color: #bdc3c7;
+        font-size: 12px;
       }
     }
   }
