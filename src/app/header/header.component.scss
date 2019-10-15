@@ -1,10 +1,18 @@
 header {
   box-shadow: inset 0 7px 0 0 #34495e;
   padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  min-height: 290px;
+  padding-bottom: 50px;
   .top-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    position: relative;
+    padding-right: 50px;
     .logo {
       color: #34495e;
       font-size: 33px;
@@ -24,21 +32,21 @@ header {
         vertical-align: middle;
       }
     }
-    nav{
+    nav {
       text-transform: uppercase;
       color: #bdc3c7;
       font-size: 13px;
       font-weight: 600;
-      ul{
+      ul {
         display: flex;
-        li{
+        li {
           margin: 0 3px;
-          a{
+          a {
             padding: 10px 15px;
             border-radius: 3px;
             display: block;
             &.active,
-            &:hover{
+            &:hover {
               background-color: #1abc9c;
               color: white;
             }
@@ -46,8 +54,60 @@ header {
         }
       }
     }
-  }
-  .bottom-header{
+    .search-box{
+      position: absolute;
+      right: 15px;
+      .btn-search{
+        width: 16px;
+        height: 16px;
+        background: url("../../assets/img/png/search.png") no-repeat center;
 
+      }
+    }
+  }
+  .bottom-header {
+    display: flex;
+    justify-content: space-between;
+    color: #bdc3c7;
+    width: 100%;
+    .heading {
+      h1 {
+        font-size: 22px;
+        font-weight: normal;
+      }
+      small {
+        font-size: 15px;
+      }
+    }
+    .soc-box {
+      h4 {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+      .soc {
+        width: 42px;
+        height: 38px;
+        display: inline-block;
+        border-radius: 2px;
+        margin-left: 5px;
+        &.tw {
+          background: #00acee url("../../assets/img/png/tw.png") no-repeat center;
+        }
+        &.fb {
+          background: #3b5998 url("../../assets/img/png/fb.png") no-repeat center;
+        }
+        &.pink {
+          background: #ea4c89 url("../../assets/img/png/pink.png") no-repeat center;
+        }
+        &.gl {
+          background: #db4a39 url("../../assets/img/png/gl.png") no-repeat center;
+        }
+        &.leaf {
+          background: #598728 url("../../assets/img/png/leaf.png") no-repeat center;
+        }
+      }
+    }
   }
 }
