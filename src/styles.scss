@@ -38,5 +38,15 @@ figure{
   margin: 0;
 }
 
+main{
+  background: #34495e;
+  padding: 38px 0 70px 0;
+}
 
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table;
+}
 

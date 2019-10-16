@@ -1,4 +1,4 @@
-<main>
+<div class="article-list">
     <ul class="tabs-filter content">
         <li>
             <a href="#">All</a>
@@ -22,13 +22,15 @@
             <a href="#">Photography</a>
         </li>
     </ul>
-    <div class="article-grid content">
-       <figure class="article-grid-item">
-           <img src="../../assets/img/jpg/1.jpg" alt="">
-           <figcaption class="caption">
-               <h3>Working in Shop</h3>
-               <small>Branding / Design </small>
-           </figcaption>
-       </figure>
+    <div class="article-grid content" *ngIf="articles$ | async as articles">
+        <figure class="article-grid-item" *ngFor="let article of articles">
+            <a href="" class="img" [routerLink]="article.id">
+                <img src="{{article.img}}" alt="">
+            </a>
+            <figcaption class="caption">
+                <h3>{{article.title}}</h3>
+                <small>{{article.made}}</small>
+            </figcaption>
+        </figure>
     </div>
-</main>
+</div>
