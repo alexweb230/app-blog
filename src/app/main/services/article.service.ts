@@ -16,7 +16,7 @@ export class ArticleService {
 
     getArticle(id: number) {
        return of(
-           list.find(art => art.id === id)
+           list.find(art => +art.id === +id)
        );
 
     }

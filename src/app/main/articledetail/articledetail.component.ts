@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ArticleService} from '../services/article.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Articlelist} from '../models/articlelist';
 import {Subscription} from 'rxjs/index';
 
@@ -11,22 +11,32 @@ import {Subscription} from 'rxjs/index';
 })
 export class ArticledetailComponent implements OnInit {
 
-    constructor(private articleService: ArticleService, private route: ActivatedRoute) {
+    constructor(private articleService: ArticleService,
+                private route: ActivatedRoute,
+                private router: Router) {
     }
 
 
-    id: number;
+    public articleId: number;
     article: Articlelist;
     artticleSub$: Subscription;
 
-    ngOnInit() {
-        this.id = +this.route.snapshot.paramMap.get('id');
 
-        this.artticleSub$ = this.articleService.getArticle(this.id)
-            .subscribe(art => {
-                this.article = art;
-                console.log(this.article);
-            });
+    ngOnInit() {
+        const id = +this.route.snapshot.paramMap.get('id');
+        this.articleId = id;
+
+
+        this.artticleSub$ = this.articleService.getArticle(this.articleId)
+            .subscribe(art => this.article = art);
+    }
+
+
+    articleNext() {
+        let count = (this.articleId + 2) - 1;
+        this.articleId = count;
+        this.router.navigate(['/main', this.articleId]);
+        console.log(this.articleId);
     }
 
 }

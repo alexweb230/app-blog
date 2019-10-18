@@ -5,6 +5,12 @@ import {ArticledetailComponent} from './articledetail/articledetail.component';
 
 const routes: Routes = [
 
+    // {
+    //     path: '',
+    //     redirectTo: 'home',
+    //     pathMatch: 'full'
+    // },
+
     {
         path: '',
         component: ArticleListComponent,
