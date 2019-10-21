@@ -1,12 +1,4 @@
-<article class="content clearfix">
-    {{article.id}}
-    <img src="{{article.img}}" alt="">
-    <p>
-       {{article.text}}
-    </p>
-    <time class="date">{{article.date}}</time>
-</article>
+<app-article [ArticleDetail]="article"></app-article>
 
-<div class="content">
-     <button class="but next" (click)="articleNext()">next</button>
-</div>
+
+

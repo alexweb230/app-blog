@@ -25,18 +25,24 @@ export class ArticledetailComponent implements OnInit {
     ngOnInit() {
         const id = +this.route.snapshot.paramMap.get('id');
         this.articleId = id;
-
+        console.log(this.articleId);
 
         this.artticleSub$ = this.articleService.getArticle(this.articleId)
             .subscribe(art => this.article = art);
+
+
+
     }
 
 
-    articleNext() {
-        let count = (this.articleId + 2) - 1;
-        this.articleId = count;
-        this.router.navigate(['/main', this.articleId]);
-        console.log(this.articleId);
-    }
+    // articleNext() {
+    //     let count = (this.articleId + 2) - 1;
+    //     this.articleId = count;
+    //     this.router.navigate(['/main', this.articleId]);
+    //
+    // }
+
+
+
 
 }
