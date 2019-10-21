@@ -3,6 +3,7 @@ import {ArticleService} from '../services/article.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Articlelist} from '../models/articlelist';
 import {Subscription} from 'rxjs/index';
+import {HeaderService} from "../../header/header.service";
 
 @Component({
     selector: 'app-articledetail',
@@ -13,6 +14,7 @@ export class ArticledetailComponent implements OnInit {
 
     constructor(private articleService: ArticleService,
                 private route: ActivatedRoute,
+                private headerServise: HeaderService,
                 private router: Router) {
     }
 
@@ -30,7 +32,7 @@ export class ArticledetailComponent implements OnInit {
         this.artticleSub$ = this.articleService.getArticle(this.articleId)
             .subscribe(art => this.article = art);
 
-
+        this.headerServise.title.next(this.article.title);
 
     }
 
