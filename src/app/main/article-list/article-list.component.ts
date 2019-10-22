@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ArticleService} from '../services/article.service';
 import {Observable} from 'rxjs/index';
 import {Articlelist} from '../models/articlelist';
-import {HeaderService} from "../../header/header.service";
+import {HeaderService} from '../../header/header.service';
 
 @Component({
   selector: 'app-article-list',
@@ -17,7 +17,7 @@ export class ArticleListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.articles$ = this.articleService.getArticleList();
+    this.articles$ = this.articleService.getArticleHttp();
 
     this.headerServise.title.next('Welcome Ladies & Gents to Calm Website.');
   }
