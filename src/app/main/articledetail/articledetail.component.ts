@@ -30,20 +30,14 @@ export class ArticledetailComponent implements OnInit {
         console.log(this.articleId);
 
         this.artticleSub$ = this.articleService.getArticle(this.articleId)
-            .subscribe(art => this.article = art);
+            .subscribe(art => {
+                this.article = art;
+                this.headerServise.title.next(this.article.title);
+            });
 
-        this.headerServise.title.next(this.article.title);
+
 
     }
-
-
-    // articleNext() {
-    //     let count = (this.articleId + 2) - 1;
-    //     this.articleId = count;
-    //     this.router.navigate(['/main', this.articleId]);
-    //
-    // }
-
 
 
 
