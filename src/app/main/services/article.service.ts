@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {of} from 'rxjs/index';
-import {Articlelist, list} from '../models/articlelist';
+import {Articlelist} from '../models/articlelist';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
@@ -17,14 +17,18 @@ export class ArticleService {
         return this.http.get<Articlelist[]>(this.URL_ROOT);
     }
 
+    getArticle(id: number){
+        return this.http.get<Articlelist>(`${this.URL_ROOT}/${id}`);
+    }
+
     // getArticleList() {
     //     return of(list);
     // }
 
-    getArticle(id: number) {
-       return of(
-           list.find(art => +art.id === +id)
-       );
-
-    }
+    // getArticle(id: number) {
+    //    return of(
+    //        list.find(art => +art.id === +id)
+    //    );
+    //
+    // }
 }
