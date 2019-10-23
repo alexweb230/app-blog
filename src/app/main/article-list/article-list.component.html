@@ -24,7 +24,7 @@
     </ul>
     <div class="article-grid content" *ngIf="articles$ | async as articles">
         <figure class="article-grid-item" *ngFor="let article of articles">
-            <a href="" class="img" [routerLink]="[article.id]">
+            <a href="" class="img" [routerLink]="article.id">
                 <img src="{{article.img}}" alt="">
             </a>
             <figcaption class="caption">

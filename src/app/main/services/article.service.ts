@@ -8,16 +8,17 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ArticleService {
 
+    private URL_ROOT = 'http://localhost:3000/articles';
+
     constructor(private http: HttpClient) {
     }
 
-    private URL_ROOT = 'http://localhost:3000/articles';
 
-    getArticleHttp(){
+    getArticleHttp() {
         return this.http.get<Articlelist[]>(this.URL_ROOT);
     }
 
-    getArticle(id: number){
+    getArticle(id: number) {
         return this.http.get<Articlelist>(`${this.URL_ROOT}/${id}`);
     }
 

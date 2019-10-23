@@ -1,7 +1,7 @@
 export interface Articlelist {
-    id?: number;
-    img: string;
+    id: number;
     title: string;
+    img: string;
     made: string;
     text: string;
     date: string;
