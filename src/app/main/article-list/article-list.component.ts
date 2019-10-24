@@ -13,6 +13,11 @@ export class ArticleListComponent implements OnInit {
 
   articles$: Observable<Articlelist[]>;
 
+  loadArticle: Array<Number>;
+
+
+
+
   constructor(private articleService: ArticleService, private headerServise: HeaderService) { }
 
   ngOnInit() {
@@ -20,6 +25,11 @@ export class ArticleListComponent implements OnInit {
     this.articles$ = this.articleService.getArticleHttp();
 
     this.headerServise.title.next('Welcome Ladies & Gents to Calm Website.');
+
+     this.loadArticle = new Array(13).fill(0).map((n, ind) => ind);
+
+
+
   }
 
 }

@@ -22,7 +22,7 @@
             <a href="#">Photography</a>
         </li>
     </ul>
-    <div class="article-grid content" *ngIf="articles$ | async as articles">
+    <div class="article-grid content" *ngIf="articles$ | async as articles; else loading">
         <figure class="article-grid-item" *ngFor="let article of articles">
             <a href="" class="img" [routerLink]="article.id">
                 <img src="{{article.img}}" alt="">
@@ -33,4 +33,12 @@
             </figcaption>
         </figure>
     </div>
+
+    <ng-template #loading>
+        <div class="article-grid content">
+            <figure class="article-grid-item" *ngFor="let article of loadArticle">
+                    <img src="../../assets/img/jpg/placeholder.png" alt="">
+            </figure>
+        </div>
+    </ng-template>
 </div>
