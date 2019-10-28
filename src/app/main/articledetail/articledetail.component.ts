@@ -5,10 +5,11 @@ import {Articlelist} from '../models/articlelist';
 import {Subscription} from 'rxjs/index';
 import {HeaderService} from '../../header/header.service';
 
+
 @Component({
     selector: 'app-articledetail',
     templateUrl: './articledetail.component.html',
-    styleUrls: ['./articledetail.component.scss']
+    styleUrls: ['./articledetail.component.scss'],
 })
 export class ArticledetailComponent implements OnInit, OnDestroy {
 
@@ -28,12 +29,10 @@ export class ArticledetailComponent implements OnInit, OnDestroy {
         this.articleId = +this.route.snapshot.paramMap.get('id');
 
 
-         this.articleSub$ = this.articleService.getArticle(this.articleId).subscribe(data => {
-             this.article = data;
-             this.headerServise.title.next(this.article.title);
-         });
-
-
+        this.articleSub$ = this.articleService.getArticle(this.articleId).subscribe(data => {
+            this.article = data;
+            this.headerServise.title.next(this.article.title);
+        });
 
 
         //
@@ -45,6 +44,7 @@ export class ArticledetailComponent implements OnInit, OnDestroy {
 
 
     }
+
     ngOnDestroy(): void {
         this.articleSub$.unsubscribe();
     }

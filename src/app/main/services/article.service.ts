@@ -16,7 +16,7 @@ export class ArticleService {
 
 
     getArticleHttp() {
-        return this.http.get<Articlelist[]>(this.URL_ROOT).pipe(delay(1000));
+        return this.http.get<Articlelist[]>(this.URL_ROOT).pipe(this.addDelay);
     }
 
     getArticle(id: number) {
@@ -26,9 +26,9 @@ export class ArticleService {
 
 
 
-    // addDelay(obs: Observable<any>){
-    //     return obs.pipe(delay(1000));
-    // }
+    addDelay(obs: Observable<any>){
+        return obs.pipe(delay(1000));
+    }
 
     // getArticleList() {
     //     return of(list);
