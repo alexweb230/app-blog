@@ -20,4 +20,10 @@ export class ProductListComponent implements OnInit {
         alert('hello');
     }
 
+
+    test(){
+        window.alert('dccL;CMLC');
+    }
+
+
 }

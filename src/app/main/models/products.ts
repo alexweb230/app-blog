@@ -5,7 +5,7 @@ export class Products {
 }
 
 
-export const products:Products[] = [
+export const products: Products[] = [
     {
         name: 'Phone XL',
         price: 799,
