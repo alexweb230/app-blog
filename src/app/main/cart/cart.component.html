@@ -1,1 +1,14 @@
-<p>cart works!</p>
+
+
+<h3>Cart:  {{cartItem.length}}</h3>
+<hr>
+
+<div *ngFor="let item of cartItem">
+    <p>{{item.name}}</p>
+    <p>{{item.price | currency}}</p>
+
+    <button>
+        clear
+    </button>
+</div>
+
