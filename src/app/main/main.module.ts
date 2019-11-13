@@ -7,9 +7,10 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductdetailComponent } from './productdetail/productdetail.component';
 import { CartComponent } from './cart/cart.component';
 import { ShipingComponent } from './shiping/shiping.component';
+import { ChildComponent } from './cart/child/child.component';
 
 @NgModule({
-  declarations: [ProductListComponent, ProductAlertsComponent, ProductdetailComponent, CartComponent, ShipingComponent],
+  declarations: [ProductListComponent, ProductAlertsComponent, ProductdetailComponent, CartComponent, ShipingComponent, ChildComponent],
   imports: [
     CommonModule,
     MainRoutingModule

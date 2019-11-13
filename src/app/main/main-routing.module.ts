@@ -20,7 +20,7 @@ const routes: Routes = [
         component: CartComponent,
         // children: [
         //     {
-        //         path: 'cart/shipping',
+        //         path: 'child',
         //         component: ShipingComponent
         //     }
         // ]
