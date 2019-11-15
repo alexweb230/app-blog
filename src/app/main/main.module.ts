@@ -8,12 +8,16 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
 import { CartComponent } from './cart/cart.component';
 import { ShipingComponent } from './shiping/shiping.component';
 import { ChildComponent } from './cart/child/child.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [ProductListComponent, ProductAlertsComponent, ProductdetailComponent, CartComponent, ShipingComponent, ChildComponent],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+      FormsModule,
+      ReactiveFormsModule
+
   ]
 })
 export class MainModule { }
