@@ -36,6 +36,11 @@ export class CartComponent implements OnInit {
         console.log(this.productForm );
 
 
+
+    }
+
+    clear(){
+        this.productService.claerCard();
     }
 
 }
