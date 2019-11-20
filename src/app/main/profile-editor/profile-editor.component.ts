@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import {FormGroup, FormControl, FormBuilder, Validators, FormArray} from '@angular/forms';
 
 @Component({
     selector: 'app-profile-editor',
@@ -31,8 +31,19 @@ export class ProfileEditorComponent implements OnInit {
             city: [''],
             state: [''],
             zip: ['']
-        })
+        }),
+        aliases: this.fb.array([
+            this.fb.control('')
+        ])
     });
+
+    get alia() {
+        return this.profileForm.get('aliases') as FormArray;
+    }
+
+    addAlia() {
+        this.alia.push(this.fb.control(''));
+    }
 
 
     onSubmit() {
