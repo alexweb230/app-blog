@@ -3,15 +3,17 @@ import {CommonModule} from '@angular/common';
 
 import {MainRoutingModule} from './main-routing.module';
 import {ReactiveformComponent} from './reactiveform/reactiveform.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { DrivenformComponent } from './drivenform/drivenform.component';
 
 @NgModule({
-    declarations: [ReactiveformComponent, ProfileEditorComponent],
+    declarations: [ReactiveformComponent, ProfileEditorComponent, DrivenformComponent],
     imports: [
         CommonModule,
         MainRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
     ]
 })
 export class MainModule {

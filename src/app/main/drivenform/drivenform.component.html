@@ -1,0 +1,57 @@
+<div class="container">
+
+    <h1>Hero Form</h1>
+
+    <form #fr="ngForm">
+        {{diagnostic}}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    [(ngModel)]="mod.name"
+                    name="name"
+                    #spy="ngModel"
+                    required>
+
+
+              <div [hidden]="spy.valid || spy.pristine"   class="alert alert-danger">Name is required</div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="alterEgo">Alter Ego</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="mod.alterEgo"
+                    name="alterEgo"
+                    id="alterEgo">
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="power">Hero Power</label>
+            <select
+                    class="form-control"
+                    id="power"
+                    [(ngModel)]="mod.power"
+                    name="power"
+                    required>
+                <option *ngFor="let power of powers" [value]="power">{{power}}</option>
+            </select>
+        </div>
+
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {{spy.className}}
+</div>
