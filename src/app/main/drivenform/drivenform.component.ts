@@ -23,15 +23,20 @@ export class DrivenformComponent implements OnInit {
     submited = false;
 
     onSubmit() {
-        this.submited = true;
+       this.submited = true;
+       console.log(this.submited);
     }
 
     get diagnostic(){
         return JSON.stringify(this.mod);
     }
 
-    ngOnInit() {
+    newHero(){
+        this.mod = new Hero(42, '', '');
+    }
 
+    ngOnInit() {
+      console.log(this.submited);
     }
 
 }

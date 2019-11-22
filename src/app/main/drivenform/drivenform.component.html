@@ -2,7 +2,7 @@
 
     <h1>Hero Form</h1>
 
-    <form #fr="ngForm">
+    <form #fr="ngForm"  (ngSubmit)="onSubmit()">
         {{diagnostic}}
         <div class="form-group">
             <label for="name">Name</label>
@@ -44,14 +44,30 @@
             </select>
         </div>
 
+        <button type="button" class="btn btn-default" (click)="newHero(); fr.reset()">New Hero</button>
 
-        <button type="submit" class="btn btn-success">Submit</button>
+
+        <button type="submit" class="btn btn-success" [disabled]="!fr.form.valid">Submit</button>
+
+
+        <div [hidden]="!submited">
+            <h2>You submitted the following:</h2>
+            <div class="row">
+                <div class="col-xs-3">Name</div>
+                <div class="col-xs-9">{{ mod.name }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">Alter Ego</div>
+                <div class="col-xs-9">{{ mod.alterEgo }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">Power</div>
+                <div class="col-xs-9">{{ mod.power }}</div>
+            </div>
+            <br>
+            <button class="btn btn-primary" (click)="submited = false">Edit</button>
+        </div>
 
     </form>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    {{spy.className}}
+
 </div>
